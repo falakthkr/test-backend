@@ -9,13 +9,11 @@ const app = express()
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-const userRoute = require("./routes/users")
-// const authRoute = require("./routes/auth")
+// const userRoute = require("./routes/users")
+const authRoute = require("./routes/auth")
 
-app.use("/users", userRoute)
-// app.use("/login", authRoute)
-
-
+// app.use("/users", userRoute)
+app.use("/login", authRoute)
 
 mongoose.connect(
     process.env.ATLAS_URI,
