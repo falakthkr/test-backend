@@ -9,10 +9,10 @@ const app = express()
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-// const userRoute = require("./routes/users")
+const userRoute = require("./routes/users")
 const authRoute = require("./routes/auth")
 
-// app.use("/users", userRoute)
+app.use("/users", userRoute)
 app.use("/login", authRoute)
 
 mongoose.connect(
