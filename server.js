@@ -18,7 +18,7 @@ app.use("/users", userRoute)
 app.use("/login", authRoute)
 
 mongoose.connect(
-    process.env.ATLAS_URI, {
+    process.env.ATLAS_URI.toString(), {
         useNewUrlParser: true,
         useCreateIndex: true,
         useUnifiedTopology: true
