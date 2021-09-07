@@ -10,6 +10,7 @@ const app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 const userRoute = require("./routes/users")
 const authRoute = require("./routes/auth")
