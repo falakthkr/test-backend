@@ -4,14 +4,14 @@ const dotenv = require("dotenv")
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var db = require('./models/db.js');
-import cors from "cors";
+const cors = require("cors");
 
 dotenv.config();
 const app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(cors());
 
 const userRoute = require("./routes/users")
