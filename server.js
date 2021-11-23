@@ -16,9 +16,11 @@ app.use(cors());
 
 const userRoute = require("./routes/users")
 const authRoute = require("./routes/auth")
+const blogsRoute = require("./routes/blogs")
 
 app.use("/users", userRoute)
 app.use("/login", authRoute)
+app.use("/blogs-app", blogsRoute)
 
 mongoose.connect(
     process.env.ATLAS_URI.toString(), {
