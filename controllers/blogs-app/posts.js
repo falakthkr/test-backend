@@ -16,8 +16,8 @@ const getPostDetails = (req, res) => {
 }
 
 const createPost = (req, res) => {
-    const { title, postBody, image, authorName, authorId } = req.body;
-    const newPost = new Post({ title, postBody, image, authorName, authorId })
+    const { title, postBody, image, authorName, authorId, description } = req.body;
+    const newPost = new Post({ title, postBody, image, authorName, authorId, description })
 
     newPost
         .save()
@@ -42,6 +42,9 @@ const updatePost = (req, res) => {
             }
             if (req.body.authorId) {
                 post.authorId = req.body.authorId;
+            }
+            if (req.body.description) {
+                post.description = req.body.description;
             }
             post
                 .save()
